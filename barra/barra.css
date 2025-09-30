@@ -138,7 +138,7 @@ body {
 }
 
 #menu2-container .dropdown-content a {
-    color: white; /* Cambiado a blanco */
+    color: #3e2687; /* Cambiado a blanco */
     text-decoration: none;
     font-size: 16px;
     font-weight: 400;
@@ -316,7 +316,7 @@ body {
 }
 
 #menu-container .dropdown-content a:hover {
-    background-color: #f1f1f1;
+    background-color: #3e2687;
 }
 
 /* Estilos adicionales para #menu-container */
