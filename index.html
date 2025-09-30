@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Fuentes y otros recursos -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Enlace a tu archivo CSS externo -->
+    <link rel="stylesheet" href="barra/barra.css">
+</head>
+<body>
+
+    <!-- Anuncio -->
+    <div class="anuncio">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8980056699793558" crossorigin="anonymous"></script>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8980056699793558" data-ad-slot="8577461929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
+    </div>
+
+    <!-- Aquí se inyecta el contenido del menú desde barra/barra.html -->
+        <div id="dev"></div>
+
+    <!-- Cargar el archivo JavaScript de la barra -->
+    <script src="barra/barra.js"></script>
+
+    <!-- Inyectar el archivo barra/barrapc.html con JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('barra/barrapc.html')
+                .then(response => response.text())
+                .then(data => {
+                    // Inyectar el contenido de barra/barrapc.html en el div con id="dev"
+                    document.getElementById('dev').innerHTML = data;
+                    
+                    // Inicializar los menús una vez se haya inyectado el contenido
+                    initMenu();  // Para el menú de escritorio
+                    initMenu2(); // Para el menú móvil
+                })
+                .catch(error => {
+                    console.error("Error al cargar el archivo barra/barrapc.html:", error);
+                });
+        });
+    </script>
+    
+</body>
+</html>
