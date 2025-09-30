@@ -222,7 +222,7 @@ body {
     background-color: #231257;
     color: white; /* Cambiado a blanco */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
+    border-radius: 12px 12px 0px 0px;
     margin: 0px 0;
     position: relative;
 }
@@ -251,13 +251,13 @@ body {
 #menu-container .menu-horizontal {
     display: none;
     position: absolute;
-    top: 70px;
+    top: 65px;
     left: 0;
     right: 0;
     background-color: #231257;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 0px 0px 12px 12px;
     justify-content: space-around;
     z-index: 10;
     flex-direction: row;
