@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiénes Somos | CNEBX Blog</title>
+
+  <style>
+    /* ======= RESETEO ======= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom right, #f5f7ff, #e9efff);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    /* ======= CONTENEDOR PRINCIPAL ======= */
+    .quienes-somos {
+      background: #fff;
+      border-radius: 25px;
+      max-width: 1000px;
+      width: 100%;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      animation: fadeIn 1s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ======= IMAGEN SUPERIOR ======= */
+    .imagen {
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+      position: relative;
+      z-index: 0;
+    }
+
+    .imagen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1);
+      animation: zoomBreath 14s ease-in-out infinite alternate;
+      filter: brightness(0.9);
+    }
+
+    @keyframes zoomBreath {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    /* ======= CONTENIDO ======= */
+    .contenido {
+      padding: 50px 60px;
+      text-align: center;
+      position: relative;
+      z-index: 5;
+    }
+
+    .contenido::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle at center, #0077ff, transparent 70%);
+      opacity: 0.08;
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .contenido h1 {
+      font-size: 2.2rem;
+      color: #222;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+      z-index: 10;
+    }
+
+    .contenido h1::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: #003366;
+      border-radius: 2px;
+    }
+
+    .contenido p {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.8;
+      text-align: justify;
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+      z-index: 10;
+      position: relative;
+    }
+
+    /* ======= ENLACES ======= */
+    a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #003366; /* Azul oscuro profesional */
+      position: relative;
+      z-index: 10;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ======= RESPONSIVO ======= */
+    @media (max-width: 768px) {
+      .contenido {
+        padding: 35px 25px;
+      }
+
+      .contenido h1 {
+        font-size: 1.8rem;
+      }
+
+      .contenido p {
+        font-size: 0.95rem;
+      }
+
+      .imagen {
+        height: 230px;
+      }
+    }
+
+    /* ======= ANIMACIÓN GENERAL ======= */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="quienes-somos">
+    <div class="imagen">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" alt="Equipo CNEBX">
+    </div>
+
+    <div class="contenido">
+      <h1>Quiénes Somos</h1>
+
+      <p><strong><a href="https://blog.cnebx.com" target="_blank">CNEBX Blog</a></strong> es un espacio informativo independiente y multidisciplinario, dedicado a compartir conocimiento, análisis y perspectivas sobre temas que impactan directamente en la vida moderna. Abordamos áreas clave como <strong>finanzas, seguros, salud, religión, tecnología, educación, medio ambiente y sociedad</strong>, con un enfoque ético, responsable y transparente.</p>
+
+      <p>Buscamos ofrecer contenido confiable y actualizado que sirva de guía y reflexión para nuestros lectores. Cada publicación se elabora con precisión y compromiso, combinando información, análisis y visión de futuro.</p>
+
+      <p>En <strong>CNEBX</strong> trabajamos con valores sólidos: responsabilidad, diversidad, transparencia y respeto. Nuestra meta es impulsar el pensamiento crítico, la conciencia social y la conexión entre información y acción positiva.</p>
+
+      <p><strong>Formamos parte del ecosistema CNEBX Media</strong>, que incluye plataformas complementarias dedicadas a la innovación y la información:  
+      <br><br>
+      <strong><a href="https://blog.cnebx.com" target="_blank">CNEBX Blog</a></strong>: espacio de análisis sobre finanzas, seguros, salud, religión y más temas de interés social.  
+      <br>
+      <strong><a href="https://extra.cnebx.com" target="_blank">CNEBX Extra</a></strong>: plataforma de comparaciones, recomendaciones, tecnología, aplicaciones y tendencias digitales.  
+      <br>
+      <strong><a href="https://noticias.cnebx.com" target="_blank">CNEBX Noticias</a></strong>: medio informativo de actualidad, política, economía, sociedad y deportes.
+      </p>
+    </div>
+  </section>
+
+  <script>
+    // Efecto de aparición suave
+    document.addEventListener("DOMContentLoaded", () => {
+      const section = document.querySelector(".quienes-somos");
+      section.style.opacity = "0";
+      setTimeout(() => {
+        section.style.transition = "opacity 1.2s ease";
+        section.style.opacity = "1";
+      }, 300);
+    });
+  </script>
+</body>
+</html>
