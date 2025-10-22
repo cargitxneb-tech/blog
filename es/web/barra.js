@@ -116,3 +116,16 @@ function inicializarMenu() {
     }
   });
 }
+// === AJUSTE DINÁMICO DEL MENÚ MÓVIL ===
+function ajustarPosicionMenu() {
+  const headerRect = header.getBoundingClientRect();
+  const distancia = 20; // margen deseado debajo del header
+  const nuevoTop = headerRect.top + headerRect.height + distancia;
+  menuList.style.top = `${nuevoTop}px`;
+}
+
+// Actualiza la posición al cargar y al hacer scroll o resize
+window.addEventListener('scroll', ajustarPosicionMenu);
+window.addEventListener('resize', ajustarPosicionMenu);
+window.addEventListener('load', ajustarPosicionMenu);
+
