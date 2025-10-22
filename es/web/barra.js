@@ -119,7 +119,7 @@ function inicializarMenu() {
 // === AJUSTE DINÁMICO DEL MENÚ MÓVIL ===
 function ajustarPosicionMenu() {
   const headerRect = header.getBoundingClientRect();
-  const distancia = 20; // margen deseado debajo del header
+  const distancia = 120; // margen deseado debajo del header
   const nuevoTop = headerRect.top + headerRect.height + distancia;
   menuList.style.top = `${nuevoTop}px`;
 }
