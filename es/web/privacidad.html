@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Política de Privacidad | CNEBX Blog</title>
 
+  <!-- Fuente profesional -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
@@ -13,8 +16,8 @@
     }
 
     body {
-      font-family: "Poppins", sans-serif;
-      background: #ffffff;
+      font-family: "Inter", sans-serif;
+      background: #f8f9fb;
       color: #2b2b2b;
       display: flex;
       justify-content: center;
@@ -24,41 +27,44 @@
     }
 
     .contenedor {
-      background: #fff;
-      border-radius: 20px;
+      background: #ffffff;
+      border-radius: 12px;
       max-width: 950px;
       width: 100%;
       padding: 60px 70px;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
       animation: fadeIn 1s ease-in-out;
     }
 
     h1 {
       text-align: center;
       font-size: 2.3rem;
-      color: #2b006b; /* azul-morado oscuro */
-      margin-bottom: 40px;
+      color: #1a365d; /* azul oscuro profesional */
+      font-weight: 700;
+      margin-bottom: 35px;
     }
 
     h1::after {
       content: "";
       display: block;
-      width: 80px;
+      width: 70px;
       height: 3px;
-      background: #4b00b8; /* más claro */
-      margin: 12px auto 0;
+      background: #2c5282; /* tono secundario discreto */
+      margin: 10px auto 0;
       border-radius: 2px;
+      opacity: 0.7;
     }
 
     h2 {
-      color: #4b00b8;
-      font-size: 1.3rem;
+      color: #1a365d;
+      font-size: 1.25rem;
       margin-top: 35px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+      font-weight: 600;
     }
 
     p {
-      color: #333;
+      color: #444;
       line-height: 1.8;
       font-size: 1rem;
       margin-bottom: 20px;
@@ -66,31 +72,33 @@
     }
 
     strong {
-      color: #4b00b8;
+      color: #2c5282;
+      font-weight: 600;
     }
 
     .enlaces-cnebx {
       display: flex;
       flex-direction: column;
-      gap: 18px;
-      margin: 15px 0 25px 25px;
+      gap: 10px;
+      margin: 10px 0 25px 25px;
     }
 
+    /* Estilo de enlaces: discreto y profesional */
     a {
-      color: #4b00b8;
+      color: #1a365d;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.05rem;
-      transition: color 0.3s ease;
+      font-weight: 500;
+      border-bottom: 1px dotted transparent;
+      transition: color 0.3s ease, border-color 0.3s ease;
     }
 
     a:hover {
-      color: #7a3eff;
-      text-decoration: underline;
+      color: #2c5282;
+      border-color: #a0aec0; /* gris azulado tenue */
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(25px); }
+      from { opacity: 0; transform: translateY(15px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
@@ -104,7 +112,7 @@
       }
 
       h2 {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
       }
 
       p {
@@ -140,7 +148,9 @@
     <p><strong>CNEBX Blog</strong> no se responsabiliza del contenido ni de las políticas de privacidad de dichos sitios, los cuales operan de manera independiente.</p>
 
     <h2>5. Publicidad Personalizada (AdSense)</h2>
-    <p>Trabajamos con Google AdSense y otras redes publicitarias que pueden utilizar cookies o identificadores para mostrar anuncios basados en sus intereses. El usuario puede consultar la política de Google sobre el uso de datos publicitarios en: <a href="https://policies.google.com/technologies/ads" target="_blank">https://policies.google.com/technologies/ads</a>.</p>
+    <p>Trabajamos con Google AdSense y otras redes publicitarias que pueden utilizar cookies o identificadores para mostrar anuncios basados en sus intereses. El usuario puede consultar la política de Google sobre el uso de datos publicitarios en 
+      <a href="https://policies.google.com/technologies/ads" target="_blank">policies.google.com/technologies/ads</a>.
+    </p>
 
     <h2>6. Seguridad de los Datos</h2>
     <p>Adoptamos medidas razonables de seguridad para proteger los datos personales frente a accesos no autorizados, pérdida o alteración. No obstante, ningún sistema en línea puede garantizar seguridad total, por lo que el uso del sitio se realiza bajo responsabilidad del usuario.</p>
@@ -152,16 +162,16 @@
     <p>Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier momento. Las versiones actualizadas se publicarán en este mismo sitio, con fecha de revisión visible.</p>
 
     <h2>9. Contacto</h2>
-    <p>Para consultas relacionadas con esta Política de Privacidad, puede comunicarse con nosotros al correo: <strong>contacto.ejemplo@gmail.com</strong>.</p>
+    <p>Para consultas relacionadas con esta Política de Privacidad, puede comunicarse con nosotros al correo: <strong><a href="mailto:contacto@cnebx.com">contacto@cnebx.com</a></strong>.</p>
   </section>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       document.body.style.opacity = "0";
       setTimeout(() => {
-        document.body.style.transition = "opacity 1.2s ease";
+        document.body.style.transition = "opacity 1s ease";
         document.body.style.opacity = "1";
-      }, 200);
+      }, 150);
     });
   </script>
 </body>
