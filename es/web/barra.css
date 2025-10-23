@@ -202,7 +202,8 @@ body {
 #miHeaderNav #menuList {
   display:none;
   position:absolute;
-  top:120px;
+  
+   margin-top:120px;
   left:0;
   width:100%;
   background:var(--bg);
