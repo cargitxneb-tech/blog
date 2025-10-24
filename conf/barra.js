@@ -77,9 +77,11 @@ function inicializarMenu() {
         submenu.style.display = 'block';
         btn.querySelector('.chevron').classList.add('open');
 
-        // Calcula posición estable respecto al header
+        // --- Posiciona el submenu justo debajo del header visible ---
         const headerBottom = header.getBoundingClientRect().bottom + window.scrollY;
+        submenu.style.position = 'absolute';
         submenu.style.top = `${headerBottom}px`;
+        submenu.style.left = `${btn.getBoundingClientRect().left}px`;
       }
     });
   });
