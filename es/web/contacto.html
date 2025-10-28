@@ -6,7 +6,7 @@
     <title>Blog Global - Contacto</title>
     <style>
         body {
-            background-color: #ffffff; /* Fondo principal claro */
+            background-color: #ffffff;
             margin: 0;
             font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
             color: #2c2c2c;
@@ -17,7 +17,6 @@
             min-height: 100vh;
         }
 
-        /* ===== CONTENEDOR GENERAL ===== */
         .contenedor {
             width: 95%;
             max-width: 1100px;
@@ -26,10 +25,10 @@
             box-shadow: 0 6px 25px rgba(0,0,0,0.08);
             overflow: hidden;
             margin: 50px 0;
-            border-top: 6px solid #123165; /* Azul marino principal */
+            border-top: 6px solid #123165;
         }
 
-        /* ===== SECCIÓN CONTACTO ===== */
+        /* ===== CONTACTO ===== */
         .recuadro {
             padding: 50px 6%;
             text-align: center;
@@ -40,7 +39,6 @@
             color: #123165;
             font-size: 30px;
             margin-bottom: 15px;
-            letter-spacing: 0.5px;
         }
 
         .descripcion-contacto {
@@ -51,42 +49,43 @@
             margin: 0 auto 35px auto;
         }
 
-        .rectangulo {
-            background: linear-gradient(135deg, #eaf0ff, #dbe4ff);
-            border: 1px solid #123165;
-            border-radius: 10px;
-            margin: 12px auto;
+        /* ===== BLOQUE CONTACTO ===== */
+        .contacto-bloque {
+            background-color: #0f204b;
+            border-radius: 12px;
             max-width: 850px;
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .contacto-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
-            color: #222;
-            padding: 18px 25px;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
+            color: #ffffff;
+            padding: 20px 30px;
         }
 
-        .rectangulo:hover {
-            background: linear-gradient(135deg, #dce7ff, #c9dbff);
-            transform: translateY(-2px);
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        .contacto-item:not(:last-child) {
+            border-bottom: 1px solid #ffffff; /* línea blanca */
         }
 
-        .rectangulo a {
-            color: #0a4cd3;
+        .contacto-item a {
+            color: #9cbcff;
             text-decoration: none;
         }
 
-        .rectangulo a:hover {
+        .contacto-item a:hover {
             text-decoration: underline;
         }
 
-        /* ===== PREGUNTAS FRECUENTES ===== */
+        /* ===== FAQ ===== */
         .faq-section {
             padding: 50px 6%;
             background-color: #ffffff;
-            border-top: 1px solid #dde2eb;
+            border-top: none;
         }
 
         .faq-container {
@@ -95,7 +94,7 @@
         }
 
         .faq-item {
-            background-color: #0f204b; /* Azul marino oscuro */
+            background-color: #0f204b;
             border: 1px solid #0c193b;
             border-radius: 10px;
             margin-bottom: 15px;
@@ -125,7 +124,7 @@
         .faq-icon {
             font-size: 22px;
             font-weight: bold;
-            color: #e0e6ff;
+            color: #cfd6f0;
             transition: transform 0.3s ease;
         }
 
@@ -138,19 +137,21 @@
 
         .faq-item.active .faq-answer {
             display: block;
+            animation: fadeIn 0.3s ease;
         }
 
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(-5px);}
+            to {opacity: 1; transform: translateY(0);}
         }
 
         @media (max-width: 768px) {
-            .rectangulo {
+            .contacto-item {
                 flex-direction: column;
                 align-items: flex-start;
                 text-align: left;
             }
-            .rectangulo span, .rectangulo a {
+            .contacto-item span, .contacto-item a {
                 margin: 5px 0;
             }
         }
@@ -171,14 +172,15 @@
                 de temas como <strong>finanzas, salud, seguros, religión, desarrollo personal</strong> y más.
             </p>
 
-            <div class="rectangulo">
-                <span>Correo de contacto:</span>
-                <span>contacto@blogglobal.com</span>
-            </div>
-
-            <div class="rectangulo">
-                <span>Facebook:</span>
-                <a href="https://facebook.com/BlogGlobalOficial" target="_blank">BlogGlobalOficial</a>
+            <div class="contacto-bloque">
+                <div class="contacto-item">
+                    <span>Correo de contacto:</span>
+                    <span>contacto@blogglobal.com</span>
+                </div>
+                <div class="contacto-item">
+                    <span>Facebook:</span>
+                    <a href="https://facebook.com/BlogGlobalOficial" target="_blank">BlogGlobalOficial</a>
+                </div>
             </div>
         </section>
 
