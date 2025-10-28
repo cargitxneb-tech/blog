@@ -5,7 +5,7 @@ fetch('/conf/barrainfo.html')
     const contenedor = document.getElementById('miHeaderNav');
     contenedor.innerHTML = html;
 
-    // --- Una vez inyectado el HTML, inicializamos toda la lógica ---
+    // --- Inicializa la lógica ---
     inicializarMenu();
   })
   .catch(err => console.error('Error al cargar barrainfo.html:', err));
@@ -34,7 +34,6 @@ function inicializarMenu() {
     document.body.style.overflow = visible ? '' : 'hidden';
   });
 
-  // --- Cerrar al tocar overlay ---
   overlay.addEventListener('click', () => {
     menuList.style.display = 'none';
     overlay.classList.remove('active');
@@ -57,7 +56,7 @@ function inicializarMenu() {
     });
   });
 
-  // --- Submenús en escritorio (click) ---
+  // --- Submenús en escritorio ---
   const desktopButtons = cont.querySelectorAll('.navlinks > li > button');
   desktopButtons.forEach(btn => {
     const submenu = btn.nextElementSibling;
@@ -65,7 +64,7 @@ function inicializarMenu() {
       e.stopPropagation();
       const isOpen = submenu.classList.contains('open');
 
-      // Cierra todos antes de abrir otro
+      // Cierra todos antes
       cont.querySelectorAll('.submenu').forEach(sm => {
         sm.classList.remove('open');
         sm.style.display = 'none';
@@ -77,11 +76,13 @@ function inicializarMenu() {
         submenu.style.display = 'block';
         btn.querySelector('.chevron').classList.add('open');
 
-        // --- Posiciona el submenu justo debajo del header visible ---
-        const headerBottom = header.getBoundingClientRect().bottom + window.scrollY;
-        submenu.style.position = 'absolute';
-        submenu.style.top = `${headerBottom}px`;
-        submenu.style.left = `${btn.getBoundingClientRect().left}px`;
+        // ✅ Posición fija debajo del header visible
+        const rectBtn = btn.getBoundingClientRect();
+        const headerRect = header.getBoundingClientRect();
+        submenu.style.position = 'fixed';
+        submenu.style.top = `${headerRect.bottom}px`;
+        submenu.style.left = `${rectBtn.left}px`;
+        submenu.style.zIndex = '9999';
       }
     });
   });
@@ -97,7 +98,9 @@ function inicializarMenu() {
     }
   });
 
-  // --- Cerrar submenús al hacer scroll ---
+  // 🔸 Ya no se cierra al hacer scroll (dejamos el submenu visible)
+  // Si prefieres que se cierre, puedes reactivar este bloque:
+  /*
   window.addEventListener('scroll', () => {
     cont.querySelectorAll('.submenu').forEach(sm => {
       sm.classList.remove('open');
@@ -105,6 +108,7 @@ function inicializarMenu() {
     });
     cont.querySelectorAll('.chevron').forEach(ch => ch.classList.remove('open'));
   });
+  */
 
   // --- Header fijo dependiendo del tamaño ---
   window.addEventListener('scroll', () => {
