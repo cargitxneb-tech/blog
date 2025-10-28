@@ -24,7 +24,7 @@
   --hover:#6c6491;
   --light:#ffffff;
   --transition:0.3s;
-  --header-height:70px; /* 🔹 Altura dinámica para submenús */
+  --header-height:70px;
   width:100%;
   margin:0;
   padding:0;
@@ -110,17 +110,18 @@ body {
   object-fit:cover;
 }
 
-/* 🔹 SUBMENÚ FIJO CON DISTANCIA CONSTANTE */
+/* 🔹 SUBMENÚ FIJO (visible siempre aunque el header esté fijo) */
 #miHeaderNav .submenu {
   display:none;
-  position:fixed; /* Antes era absolute */
-  top:calc(var(--header-height) + 8px); /* Siempre debajo del header */
+  position:fixed;
+  top:calc(var(--header-height) + 8px);
   background:var(--bg);
   border:1px solid rgba(255,255,255,0.1);
   border-radius:6px;
   padding:8px 0;
   min-width:190px;
-  z-index:150;
+  z-index:9999;
+  box-shadow:0 6px 18px rgba(0,0,0,0.3);
 }
 #miHeaderNav .submenu a {
   display:flex;
@@ -283,7 +284,7 @@ body {
   #miHeaderNav .overlay {display:none !important;}
 }
 
-/* 📱 Bloqueo de móvil en escritorio y viceversa */
+/* Bloqueo móvil en escritorio */
 @media (min-width: 700px) {
   #menuList,
   #overlay {
