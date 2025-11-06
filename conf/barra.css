@@ -1,314 +1,190 @@
-.anuncio {
-  width: 99%;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70px;
-}
-
-@media (max-width: 850px) {
-  .anuncio {
-    height: 60px;
-  }
-}
-
-@media (max-width: 580px) {
-  .anuncio {
-    height: 52px;
-  }
-}
-
-#miHeaderNav {
-  --bg:#170a4a;
-  --hover:#6c6491;
-  --light:#ffffff;
-  --transition:0.3s;
-  --header-height:70px;
-  width:100%;
-  margin:0;
-  padding:0;
-  font-family:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-}
-
+/* Estilos generales */
 body {
-  margin:0;
-  padding:0;
-  overflow-x:hidden;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
 }
 
-#miHeaderNav * {
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-/* HEADER */
-#miHeaderNav .header {
-  position:sticky;
-  top:0;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:20px 28px;
-  background:var(--bg);
-  border-bottom:1px solid rgba(255,255,255,0.1);
-  z-index:100;
-}
-
-/* LOGO */
-#miHeaderNav .brand {
-  font-weight:700;
-  font-size:1.5rem;
-  color:var(--light);
-  text-transform:none;
-}
-
-/* NAV PRINCIPAL */
-#miHeaderNav .navlinks {
-  display:none;
-  align-items:center;
-  gap:50px;
-}
-#miHeaderNav .navlinks li {
-  list-style:none;
-  position:relative;
-}
-#miHeaderNav .navlinks button {
-  background:none;
-  border:none;
-  color:var(--light);
-  font-weight:500;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  gap:6px;
-  font-size:1.18rem;
-  letter-spacing:0.4px;
-  transition:color var(--transition), text-shadow var(--transition);
-}
-#miHeaderNav .navlinks button:hover {
-  color:var(--hover);
-  text-shadow:0 0 8px rgba(108,100,145,0.6);
-}
-
-/* CHEVRON */
-#miHeaderNav .chevron {
-  width:20px;
-  height:20px;
-  stroke:currentColor;
-  stroke-width:2;
-  transition:transform var(--transition);
-}
-#miHeaderNav .chevron.open {transform:rotate(180deg);}
-
-/* BANDERAS */
-#miHeaderNav .flag {
-  width:22px;
-  height:22px;
-  border-radius:50%;
-  object-fit:cover;
-}
-
-/* 🔹 SUBMENÚ FIJO (visible siempre aunque el header esté fijo) */
-#miHeaderNav .submenu {
-  display:none;
-  position:fixed;
-  top:calc(var(--header-height) + 8px);
-  background:var(--bg);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:6px;
-  padding:8px 0;
-  min-width:190px;
-  z-index:9999;
-  box-shadow:0 6px 18px rgba(0,0,0,0.3);
-}
-#miHeaderNav .submenu a {
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:10px 16px;
-  color:var(--light);
-  text-decoration:none;
-  font-size:1rem;
-  font-weight:400;
-  transition:color var(--transition), text-shadow var(--transition);
-}
-#miHeaderNav .submenu a:hover {
-  color:var(--hover);
-  text-shadow:0 0 8px rgba(108,100,145,0.6);
-}
-
-/* HAMBURGUESA */
-#miHeaderNav .actions {
-  display:flex;
-  align-items:center;
-}
-#miHeaderNav .hamburger {
-  position:relative;
-  width:30px;
-  height:22px;
-  cursor:pointer;
-  border:0;
-  background:transparent;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
-#miHeaderNav .hamburger span {
-  display:block;
-  height:3px;
-  width:100%;
-  background:#ffffff;
-  border-radius:2px;
-  transition:all 0.3s ease;
-}
-#miHeaderNav .hamburger.active span:nth-child(1) {
-  transform:rotate(45deg) translate(5px,5px);
-}
-#miHeaderNav .hamburger.active span:nth-child(2) {
-  opacity:0;
-}
-#miHeaderNav .hamburger.active span:nth-child(3) {
-  transform:rotate(-45deg) translate(5px,-5px);
-}
-
-/* OVERLAY */
-#miHeaderNav .overlay {
-  display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100vh;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(2px);
-  z-index:30;
-  opacity:0;
-  transition:opacity 0.3s ease;
-}
-#miHeaderNav .overlay.active {
-  display:block;
-  opacity:1;
-}
-
-/* MENÚ MÓVIL */
-#miHeaderNav #menuList {
-  display:none;
-  position:absolute;
-  margin-top:120px;
-  left:0;
-  width:100%;
-  background:var(--bg);
-  border-top:1px solid rgba(255,255,255,0.1);
-  border-radius:0 0 10px 10px;
-  padding:20px;
-  z-index:40;
-  animation:fadeSlideDown 0.3s ease forwards;
-  box-shadow:0 6px 20px rgba(0,0,0,0.25);
-}
-#miHeaderNav #menuList ul {list-style:none;}
-#miHeaderNav #menuList button {
-  width:100%;
-  background:none;
-  border:none;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:14px 0;
-  color:var(--light);
-  font-weight:500;
-  font-size:1.1rem;
-  cursor:pointer;
-  transition:color var(--transition), text-shadow var(--transition);
-}
-#miHeaderNav #menuList button:hover {
-  color:var(--hover);
-  text-shadow:0 0 8px rgba(108,100,145,0.6);
-}
-
-/* SUBMENÚ MÓVIL */
-#miHeaderNav .mobile-submenu {
-  display:none;
-  padding-left:16px;
-  border-left:2px solid rgba(255,255,255,0.2);
-}
-#miHeaderNav .mobile-submenu a {
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-weight:400;
-  color:var(--light);
-  padding:6px 0;
-  text-decoration:none;
-  transition:color var(--transition), text-shadow var(--transition);
-}
-#miHeaderNav .mobile-submenu a:hover {
-  color:var(--hover);
-  text-shadow:0 0 6px rgba(108,100,145,0.6);
-}
-
-/* ANIMACIÓN */
-@keyframes fadeSlideDown {
-  from {opacity:0;transform:translateY(-10px);}
-  to {opacity:1;transform:translateY(0);}
-}
-
-/* ESCRITORIO */
-@media(min-width:700px) {
-  #miHeaderNav .navlinks {display:flex;}
-  #miHeaderNav .header {
-    justify-content:center;
-    padding:22px 50px;
-  }
-  #miHeaderNav .brand {
-    position:absolute;
-    left:36px;
-    font-size:1.6rem;
-  }
-  #miHeaderNav .navlinks button {
-    font-size:1.2rem;
-    font-weight:500;
-    letter-spacing:0.6px;
-  }
-  #miHeaderNav .chevron {width:22px;height:22px;}
-  #miHeaderNav .flag {width:24px;height:24px;}
-  #miHeaderNav .submenu a {
-    font-size:0.95rem;
-    padding:10px 18px;
-    font-weight:400;
-  }
-  #miHeaderNav .navlinks li:hover > button .chevron {transform:rotate(180deg);}
-  #miHeaderNav .actions {display:none !important;}
-  #miHeaderNav #menuList {display:none !important;}
-  #miHeaderNav .overlay {display:none !important;}
-}
-
-/* Bloqueo móvil en escritorio */
-@media (min-width: 700px) {
-  #menuList,
-  #overlay {
-    display: none !important;
-  }
-}
-
-@media (min-width: 800px) {
-  #miHeaderNav .header {
-    justify-content: center;
-    padding: 22px 70px;
-    position: relative;
-  }
-
-  #miHeaderNav .brand {
-    position: absolute;
-    left: 40px;
-    font-size: 1.7rem;
-  }
-
-  #miHeaderNav .navlinks {
+/* Aislar los estilos para el contenedor con ID 'b40' */
+#b40 .navbar {
+    background-color: #180E64;
+    padding: 10px 20px;
     display: flex;
-    gap: 70px;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
-    left: 15%;
-  }
+    top: 3px;
+    left: 0;
+    right: 0;
+    border-radius: 17px;
+    z-index: 1000;
+    height: 35px;
+    transition: position 0.3s ease;
+}
+
+/* Barra fija al hacer scroll */
+#b40 .navbar.fixed {
+    position: fixed;
+    top: 3px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    margin: 0;
+}
+
+#b40 .logo img {
+    width: 110px;
+    height: auto;
+}
+
+/* Icono de hamburguesa */
+#b40 .hamburger {
+    position: relative;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+#b40 .hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Efecto para transformar la hamburguesa en una X */
+#b40 .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+#b40 .hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+#b40 .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Panel que aparece al abrir el menú */
+#b40 .bottom-panel {
+    display: none;
+    position: absolute;
+    top: 65px;  /* Inicialmente a 80px desde la parte superior de la página */
+    left: 3px;
+    right: 3px;
+    background-color: white;
+    padding: 7px;
+    box-sizing: border-box;
+    z-index: 999;
+    max-height: 80%;
+    overflow-y: auto;
+    border-radius: 10px;
+    transition: top 0.3s ease;
+}
+
+/* Mostrar el panel cuando está abierto */
+#b40 .bottom-panel.show {
+    display: block;
+}
+
+/* Estilo para la navegación dentro del panel */
+#b40 .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#b40 .nav-links li {
+    margin: 10px 0;
+    position: relative;
+}
+
+#b40 .nav-links a {
+    color: #180E64;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+/* Submenú que se expande */
+#b40 .sub-menu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    padding-left: 10px;
+    top: 0px;
+}
+
+#b40 .sub-menu.show {
+    display: block;
+}
+
+#b40 .sub-menu li a {
+    color: #180E64;
+    padding: 4px;
+    font-size: 13px;
+    transition: background-color 0.3s ease;
+}
+
+#b40 .sub-menu li a:hover {
+    background-color: #f1c40f;
+}
+
+/* Estilo para las banderas circulares */
+#b40 .sub-menu li a .flag {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Overlay oscuro */
+#b40 .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 500;
+}
+
+#b40 .overlay.show {
+    display: block;
+}
+
+/* Flecha que rota al abrir o cerrar el submenú */
+#b40 .toggle-submenu i {
+    font-size: 14px; /* Tamaño más pequeño para las flechas */
+    transition: transform 0.3s ease;
+}
+
+#b40 .toggle-submenu.active i {
+    transform: rotate(180deg); /* Rota la flecha */
+}
+
+/* Hacer que los elementos "Idioma", "Inicio", etc. solo actúen como botones, no como enlaces */
+#b40 .toggle-submenu {
+    cursor: pointer;
+}
+
+/* Desactivar el scroll en el body cuando el panel esté abierto */
+body.no-scroll {
+    overflow: hidden;
 }
