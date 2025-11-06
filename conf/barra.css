@@ -332,6 +332,10 @@ body.no-scroll {
             padding: 50px 20px;
             height: 2000px; /* Altura para simular scroll */
         }
+
+body.no-scroll {
+    overflow: none;
+}
 @media (max-width: 770px) {
    #b03 {
     display: none; /* Esto lo oculta en pantallas grandes */
