@@ -6,6 +6,10 @@ body {
     box-sizing: border-box;
     background-color: #f4f4f4;
 }
+#b40 {
+    width: 100%;
+}
+
 
 /* Aislar los estilos para el contenedor con ID 'b40' */
 #b40 .navbar {
@@ -136,7 +140,7 @@ body {
 #b40 .sub-menu li a {
     color: #180E64;
     padding: 4px;
-    font-size: 15px;
+    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
