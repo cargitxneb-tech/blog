@@ -333,8 +333,8 @@ body.no-scroll {
             height: 2000px; /* Altura para simular scroll */
         }
 
-body.no-scroll {
-    overflow: none;
+body.scroll {
+    overflow: hidden;
 }
 @media (max-width: 770px) {
    #b03 {
