@@ -47,4 +47,4 @@ function inicializarMenu() {
       menuItems.forEach(item => item.classList.remove('open'));
     }
   });
-}
+} 
