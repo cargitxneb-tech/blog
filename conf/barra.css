@@ -192,6 +192,11 @@ body {
 body.no-scroll {
     overflow: hidden;
 }
+@media (min-width: 769px) {
+   #b40 {
+    display: none; /* Esto lo oculta en pantallas grandes */
+  }
+}
 
 /* Estilos generales */
 body {
@@ -318,4 +323,8 @@ body {
   padding: 50px 20px;
   height: 2000px; /* Altura para simular scroll */
 }
-
+@media (max-width: 770px) {
+   #b03 {
+    display: none; /* Esto lo oculta en pantallas grandes */
+  }
+}
