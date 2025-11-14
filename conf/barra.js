@@ -99,10 +99,10 @@ function inicializarMenu() {
       menuItems.forEach(item => item.classList.remove('open'));
     }
   });
-
+}
 // footer.js
 document.addEventListener("DOMContentLoaded", () => {
-  fetch('conf/footer.html')
+  fetch('/conf/footer.html')
     .then(response => {
       if (!response.ok) {
         throw new Error('No se pudo cargar el footer');
@@ -114,4 +114,4 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(error => console.error(error));
 });
-}
+
