@@ -99,7 +99,7 @@ function inicializarMenu() {
       menuItems.forEach(item => item.classList.remove('open'));
     }
   });
-}
+
 // footer.js
 document.addEventListener("DOMContentLoaded", () => {
   fetch('conf/footer.html')
@@ -114,4 +114,4 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(error => console.error(error));
 });
-
+}
