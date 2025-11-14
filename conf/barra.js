@@ -12,6 +12,20 @@ fetch('/conf/barrainfo.html') // Ruta relativa del archivo HTML del menú
   .catch(err => console.error('Error al cargar barrainfo.html:', err));
 
 
+// --- CARGA DEL FOOTER ---
+document.addEventListener("DOMContentLoaded", () => {
+  fetch('footer.html') // Ruta relativa del archivo HTML del footer
+    .then(response => {
+      if (!response.ok) throw new Error('No se pudo cargar footer.html');
+      return response.text();
+    })
+    .then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+    })
+    .catch(error => console.error('Error al cargar footer.html:', error));
+});
+
+
 // --- Inicializa los eventos del menú ---
 function inicializarMenu() {
   const hamburger = document.querySelector('#b40 .hamburger');
@@ -36,8 +50,8 @@ function inicializarMenu() {
   // --- Submenús ---
   submenuToggles.forEach(toggle => {
     toggle.addEventListener('click', (ev) => {
-      ev.preventDefault();  // Prevenir navegación
-      const subMenu = toggle.nextElementSibling;  // El siguiente <ul> con la clase sub-menu
+      ev.preventDefault();
+      const subMenu = toggle.nextElementSibling;
       if (subMenu) {
         subMenu.classList.toggle('show');
         toggle.classList.toggle('active');
@@ -69,9 +83,8 @@ function inicializarMenu() {
   // --- Nueva funcionalidad para la barra de navegación del b03 ---
   const navbarB03 = document.querySelector('#b03 .navbar');
   const menuItems = document.querySelectorAll('#b03 .nav-links > li');
-  const threshold = 70;  // Distancia en px para fijar la barra
+  const threshold = 70;
 
-  // Fijar la barra al hacer scroll
   window.addEventListener('scroll', function() {
     if (window.scrollY > threshold) {
       navbarB03.classList.add('fixed');
@@ -80,7 +93,6 @@ function inicializarMenu() {
     }
   });
 
-  // Manejo de apertura/cierre de submenús
   menuItems.forEach(item => {
     item.addEventListener('click', function(event) {
       if (item.classList.contains('open')) {
@@ -93,25 +105,9 @@ function inicializarMenu() {
     });
   });
 
-  // Cerrar submenús al hacer clic fuera de la barra
   document.addEventListener('click', function(event) {
     if (!event.target.closest('#b03 .navbar')) {
       menuItems.forEach(item => item.classList.remove('open'));
     }
   });
 }
-// footer.js
-document.addEventListener("DOMContentLoaded", () => {
-  fetch('/conf/footer.html')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('No se pudo cargar el footer');
-      }
-      return response.text();
-    })
-    .then(data => {
-      document.getElementById('footer-container').innerHTML = data;
-    })
-    .catch(error => console.error(error));
-});
-
