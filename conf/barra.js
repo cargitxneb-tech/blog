@@ -14,7 +14,7 @@ fetch('/conf/barrainfo.html') // Ruta relativa del archivo HTML del menú
 
 // --- CARGA DEL FOOTER ---
 document.addEventListener("DOMContentLoaded", () => {
-  fetch('footer.html') // Ruta relativa del archivo HTML del footer
+  fetch('/conf/footer.html') // Ruta relativa del archivo HTML del footer
     .then(response => {
       if (!response.ok) throw new Error('No se pudo cargar footer.html');
       return response.text();
