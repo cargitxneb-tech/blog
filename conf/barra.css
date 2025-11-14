@@ -341,3 +341,77 @@ body.scroll {
     display: none; /* Esto lo oculta en pantallas grandes */
   }
 }
+/* Estilos encapsulados para el footer con id f03 */
+#f03 {
+  background: linear-gradient(180deg, #0d1f44 0%, #0a1630 100%);
+  padding: 50px 20px 20px 20px;
+  color: #cdd3e3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+}
+
+#f03 img {
+  height: 70px;
+  margin-bottom: 15px;
+}
+
+#f03 .description {
+  max-width: 550px;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #aeb9d2;
+}
+
+#f03 .links {
+  margin-bottom: 30px;
+}
+
+#f03 .links a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+#f03 .links a:hover {
+  color: #4da3ff;
+}
+
+#f03 .social {
+  margin-bottom: 25px;
+}
+
+#f03 .social a {
+  margin: 0 10px;
+  color: #cdd3e3;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#f03 .social a:hover {
+  color: #4da3ff;
+}
+
+#f03 .bottom {
+  font-size: 13px;
+  color: #9aa4c0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 15px;
+  width: 100%;
+  max-width: 700px;
+}
+
+@media (max-width: 600px) {
+  #f03 .links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
