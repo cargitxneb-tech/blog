@@ -1,0 +1,411 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MiBlog — Finanzas, Salud, Religión y Más</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* =========================
+   BLOQUE c01 - Todo aislado
+=========================*/
+#c01 {
+  --bg: #ffffff;
+  --card: #f7f8fa;
+  --primary: #1e3a8a;
+  --primary-dark: #162d6d;
+  --accent: #2563eb;
+  --muted: #6b7280;
+  --text: #0f172a;
+
+  font-family: Poppins, Inter, system-ui, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 0;
+  margin: 0;
+}
+
+#c01 * {
+  box-sizing: border-box;
+}
+
+#c01 .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+/* =========================
+   HERO
+=========================*/
+#c01 .hero {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 32px;
+  align-items: center;
+  padding: 36px 0;
+}
+
+#c01 .hero-left h1 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary);
+  margin-bottom: 16px;
+  font-size: 44px;
+}
+
+#c01 .hero-left p {
+  color: var(--muted);
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+#c01 .card-hero img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+@media (max-width: 980px) {
+  #c01 .hero {
+    grid-template-columns: 1fr;
+  }
+  #c01 .hero-left h1 {
+    font-size: 36px;
+  }
+  #c01 .hero-left p {
+    font-size: 17px;
+  }
+  #c01 .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+}
+
+@media (max-width: 480px) {
+  #c01 .hero-left h1 {
+    font-size: 30px;
+  }
+  #c01 .hero-left p {
+    font-size: 16px;
+  }
+  #c01 .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+}
+
+/* Botón */
+#c01 .btn {
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid #e2e8f0;
+  background: #f0f1f5;
+  color: var(--primary);
+  cursor: default;
+  font-family: Inter, sans-serif;
+}
+
+#c01 .btn:hover {
+  background: #f0f1f5 !important;
+}
+
+/* =========================
+   ESTADÍSTICAS
+=========================*/
+#c01 .stats {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+#c01 .stat {
+  background: var(--card);
+  padding: 14px 20px;
+  border-radius: 12px;
+  min-width: 120px;
+  text-align: center;
+}
+
+#c01 .stat b {
+  display: block;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 4px;
+  font-size: 24px;
+}
+
+#c01 .stat small {
+  display: block;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+@media (max-width: 480px) {
+  #c01 .stats { justify-content: center; }
+  #c01 .stat { min-width: 80px; padding: 12px; }
+  #c01 .stat b { font-size: 18px; }
+  #c01 .stat small { font-size: 12px; }
+}
+
+/* =========================
+   CATEGORÍAS
+=========================*/
+#c01 #categorias .cat-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 50px 0 22px;
+}
+
+#c01 .cat-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+  #c01 .cat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1000px) {
+  #c01 .cat-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Tarjetas de categorías */
+#c01 .card {
+  display: block;
+  background: #f7f8fa;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  transition: 0.3s;
+  text-decoration: none;
+  color: inherit;
+}
+
+#c01 .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 14px rgba(37,99,235,0.12);
+}
+
+#c01 .thumb {
+  height: 160px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 14px;
+}
+
+#c01 .card h3 {
+  margin: 8px 0 4px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+#c01 .subtitle {
+  font-size: 15px;
+  color: #6b7280;
+}
+
+#c01 .tag {
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(37,99,235,0.08);
+  color: #2563eb;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+#c01 .meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* =========================
+   OPINIONES DE EDITORES
+=========================*/
+#c01 #opiniones {
+  margin: 60px 0;
+}
+
+#c01 #opiniones .opiniones-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+#c01 .opiniones-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+  #c01 .opiniones-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1000px) {
+  #c01 .opiniones-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+#c01 .opinion-card {
+  background: #f7f8fa;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  transition: 0.3s;
+}
+
+#c01 .opinion-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(37,99,235,0.12);
+}
+
+#c01 .opinion-card p {
+  font-size: 16px;
+  color: #0f172a;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+#c01 .opinion-card .editor-name {
+  display: block;
+  font-size: 15px;
+  color: #4f83cc;
+  font-weight: 500;
+  text-align: left;
+}
+</style>
+</head>
+
+<body>
+<div id="c01">
+  <div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="hero-left">
+        <h1>MiBlog — Finanzas, salud, religión y más</h1>
+        <p>Un espacio moderno para aprender, reflexionar y compartir conocimiento sobre crecimiento personal y bienestar integral.</p>
+
+        <div class="cta-row">
+          <button class="btn">Artículos recientes</button>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <b>240+</b>
+            <small>Artículos</small>
+          </div>
+          <div class="stat">
+            <b>30K</b>
+            <small>Lectores</small>
+          </div>
+          <div class="stat">
+            <b>5</b>
+            <small>Autores</small>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card-hero">
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop" alt="Imagen destacada">
+      </aside>
+
+    </section>
+
+    <!-- CATEGORÍAS -->
+    <section id="categorias">
+      <h2 class="cat-title">Categorías</h2>
+
+      <div class="cat-grid">
+        <!-- FINANZAS -->
+        <a href="#" class="card">
+          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1554224154-22dec7ec8818?q=80&w=1200&auto=format&fit=crop');"></div>
+          <h3>Finanzas</h3>
+          <div class="subtitle">Dinero, inversiones y estabilidad</div>
+          <div class="tag">Finanzas</div>
+          <div class="meta"><span>28 posts</span><span>Actualizado: 3d</span></div>
+        </a>
+        <!-- SALUD -->
+        <a href="#" class="card">
+          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1200&auto=format&fit=crop');"></div>
+          <h3>Salud</h3>
+          <div class="subtitle">Bienestar físico y mental</div>
+          <div class="tag">Salud</div>
+          <div class="meta"><span>32 posts</span><span>Actualizado: 2d</span></div>
+        </a>
+        <!-- RELIGIÓN -->
+        <a href="#" class="card">
+          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=1200&auto=format&fit=crop');"></div>
+          <h3>Religión</h3>
+          <div class="subtitle">Fe, espiritualidad y reflexión</div>
+          <div class="tag">Espiritualidad</div>
+          <div class="meta"><span>14 posts</span><span>Actualizado: 1d</span></div>
+        </a>
+        <!-- CRECIMIENTO -->
+        <a href="#" class="card">
+          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1485217988980-11786ced9454?q=80&w=1200&auto=format&fit=crop');"></div>
+          <h3>Crecimiento</h3>
+          <div class="subtitle">Desarrollo personal y mentalidad</div>
+          <div class="tag">Motivación</div>
+          <div class="meta"><span>21 posts</span><span>Actualizado: 5d</span></div>
+        </a>
+        <!-- VARIADOS -->
+        <a href="#" class="card">
+          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1536924940846-227afb31e2a5?q=80&w=1200&auto=format&fit=crop');"></div>
+          <h3>Variados</h3>
+          <div class="subtitle">Temas libres y curiosidades</div>
+          <div class="tag">General</div>
+          <div class="meta"><span>18 posts</span><span>Actualizado: 4d</span></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- OPINIONES -->
+    <section id="opiniones">
+      <h2 class="opiniones-title">Opiniones de nuestros editores</h2>
+      <div class="opiniones-grid">
+        <div class="opinion-card">
+          <p>“La estabilidad financiera comienza con una mentalidad clara.”</p>
+          <span class="editor-name">— Editor Anónimo 01</span>
+        </div>
+        <div class="opinion-card">
+          <p>“La salud es la base para un crecimiento personal sostenible.”</p>
+          <span class="editor-name">— Editor Anónimo 02</span>
+        </div>
+        <div class="opinion-card">
+          <p>“El aprendizaje constante nos permite tomar mejores decisiones.”</p>
+          <span class="editor-name">— Editor Anónimo 03</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+</body>
+</html>
