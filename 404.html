@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CNEBX Blog — Estamos trabajando</title>
+
+  <meta name="description" content="CNEBX Blog está construyendo un espacio moderno y profesional con contenido en finanzas, salud, religión, crecimiento personal y variados. Disponible en español e inglés." />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root{
+      --navy:#0d1b2a;
+      --navy-light:#1b2a41;
+      --blue:#1c4e80;
+      --white:#ffffff;
+      --gray:#8b97a5;
+      --max:900px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body{
+      margin:0;
+      background:var(--white);
+      color:#0f172a;
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:60px 20px;
+      display:flex;
+      flex-direction:column;
+      gap:40px;
+    }
+
+    header{
+      display:flex;
+      justify-content:center;
+    }
+
+    .logo{
+      font-size:30px;
+      font-weight:700;
+      color:var(--navy);
+      letter-spacing:1px;
+    }
+
+    .hero{
+      text-align:center;
+      padding:50px 30px;
+      background:linear-gradient(135deg, var(--navy), var(--blue));
+      color:var(--white);
+      border-radius:18px;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .hero h1{
+      margin:0;
+      font-size:34px;
+      font-weight:700;
+    }
+
+    .hero p{
+      margin:0 auto;
+      max-width:600px;
+      font-size:16px;
+      line-height:1.6;
+      opacity:.9;
+    }
+
+    .sections{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .box{
+      background:#f8fafc;
+      border-radius:14px;
+      padding:24px;
+      border:1px solid #e2e8f0;
+    }
+
+    .box h3{
+      margin:0 0 6px;
+      color:var(--navy);
+      font-size:18px;
+    }
+
+    .box p{
+      margin:0;
+      color:#475569;
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    footer{
+      text-align:center;
+      font-size:14px;
+      color:var(--gray);
+      padding-top:10px;
+    }
+
+    @media(max-width:700px){
+      .sections{grid-template-columns:1fr;}
+      .hero h1{font-size:28px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="logo">CNEBX BLOG</div>
+    </header>
+
+    <section class="hero">
+      <h1>Estamos construyendo algo especial</h1>
+      <p>Muy pronto abriremos nuestro espacio moderno, minimalista y profesional donde encontrarás contenido en finanzas, salud, religión, crecimiento personal y variados — disponible en español e inglés.</p>
+    </section>
+
+    <section class="sections">
+      <div class="box">
+        <h3>Finanzas</h3>
+        <p>Consejos claros y prácticos para mejorar tu economía personal y tomar decisiones informadas.</p>
+      </div>
+
+      <div class="box">
+        <h3>Salud</h3>
+        <p>Bienestar, hábitos y guías respaldadas para una vida saludable y equilibrada.</p>
+      </div>
+
+      <div class="box">
+        <h3>Religión</h3>
+        <p>Contenido respetuoso y reflexivo sobre fe, valores y espiritualidad.</p>
+      </div>
+
+      <div class="box">
+        <h3>Crecimiento Personal</h3>
+        <p>Desarrollo, mentalidad, productividad y herramientas para avanzar en tu vida diaria.</p>
+      </div>
+
+      <div class="box">
+        <h3>Variados</h3>
+        <p>Artículos de diferentes categorías para complementar tu aprendizaje y curiosidad.</p>
+      </div>
+    </section>
+
+    <footer>
+      © <script>document.write(new Date().getFullYear())</script> CNEBX Blog — Próximamente disponible.
+    </footer>
+
+  </div>
+</body>
+</html>
